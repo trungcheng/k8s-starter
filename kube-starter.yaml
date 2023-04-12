@@ -1,0 +1,12 @@
+apiVersion: v1 # Descriptor conforms to version v1 of Kubernetes API
+kind: Pod # Select Pod resource
+metadata:
+  name: kube-starter # The name of the pod
+spec:
+  containers:
+    - name: kube-container # The name of the container
+      image: kube-image:latest # Image to create the container
+      imagePullPolicy: Never # The image use locally and not pull from docker hub
+      ports:
+        - containerPort: 3002 # The port the app is listening on
+          protocol: TCP
