@@ -6,6 +6,7 @@
     5. `kubectl proxy`
     6. `kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')`
     7. `kubectl logs -f <podName>`
+    8. `kubectl port-forward pod/kube-starter 3002:3002`
     
 # Start a local registry container:
     `docker run -d -p 5000:5000 --restart=always --name registry registry:2`
