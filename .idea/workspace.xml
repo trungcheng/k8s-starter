@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30b9d021-37e9-4d87-8655-70afa5ccfb00" name="Default Changelist" comment="" />
+    <list default="true" id="30b9d021-37e9-4d87-8655-70afa5ccfb00" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kube-starter.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/kube-starter.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,15 +13,22 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2O4uhiFkPLUuJGcOsZa8PsOqjid" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../rabbitmq-starter" />
+    <property name="last_opened_file_path" value="C:/laragon/www/ef1g-efalcon" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -31,7 +41,8 @@
       <workItem from="1680775293540" duration="2696000" />
       <workItem from="1680832297395" duration="10829000" />
       <workItem from="1681181706039" duration="1194000" />
-      <workItem from="1681267541221" duration="4809000" />
+      <workItem from="1681267541221" duration="5403000" />
+      <workItem from="1681354006232" duration="11835000" />
     </task>
     <servers />
   </component>
@@ -43,9 +54,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="724" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1680849390037" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1681267547138">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1681354584194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1681267547138" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1681354584194" />
   </component>
 </project>
