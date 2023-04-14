@@ -1,27 +1,41 @@
-# Basic command
-    1. `kubectl version`
-    2. `kubectl get nodes`
-    3. `kubectl get pods`
-    4. `kubectl apply -f <yaml config file>`
-    5. `kubectl proxy`
-    6. `kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')`
-    7. `kubectl logs -f <podName>`
-    8. `kubectl port-forward pod/kube-starter 3002:3002`
+# Common flow
+    Cluster (master node + worker nodes) -> Nodes -> Pods -> Docker containers
     
-# Start a local registry container:
-    `docker run -d -p 5000:5000 --restart=always --name registry registry:2`
+# Detail common flow
+    1. Cluster: Include 1 master node and multiple worker nodes
+    2. Master node:
+        - API Server
+        - Controller Manager: Create pod, create deployment...v.v
+        - Scheduler: Scheduler app to node
+        - Etcd: An database save cluster status and cluster resource
+    3. Worker node: Run app
+        - Container Runtime: Run containers
+        - Kubelet: Communicate with API Server and manage container in a worker node
+        - Kubenetes Service Proxy (kube-proxy): Manage the network and traffic of apps in worker node
 
-# Do docker images to find out the REPOSITORY and TAG of your local image. Then create a new tag for your local image :
-    `docker tag <local-image-repository>:<local-image-tag> localhost:5000/<local-image-name>`
+# The main components
+    1. ReplicationControllers: create and manage, monitor pods in worker node, even worker node die, always keep the number of replica even delete pod
+        - Label selector: Define which the pod
+        - Replica count: Number of pods
+        - Pod template: Pod config
+    2. ReplicaSets: Similar to replication controller but more flexible in label selector, deploy multiple pods in node, 1 pod can deploy in any nodes
+    3. DaemonSets: Similar to ReplicaSets but can deploy only 1 pod to each node, don't have replica property, usually used to monitoring and logging. We want have only 1 monitoring pod on each node
 
-# If TAG for your local image is None, you can simply do:
-    `docker tag <local-image-repository> localhost:5000/<local-image-name>`
-
-# Push to local registry:
-    `docker push localhost:5000/<local-image-name>`
+# Basic command
+    1. kubectl version: Get the version of k8s
+    2. kubectl get nodes: Get node list
+    3. kubectl get pods: Get pod list
+    4. kubectl apply -f <yaml_config_file>: Apply resource for k8s
+    5. kubectl proxy: Serve proxy for dashboard
+    6. kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}'): Generate token to login
+    7. kubectl logs -f <pod_name>: Get logs of pod realtime
+    8. kubectl port-forward pod/<pod_name> 3002:3002: Expose port from local cluster to external
+    9. kubectl get pod --show-labels: Get pod list with label
+    10. kubectl get ns: Get namespace list
+    11. kubectl create ns <namespace_name>: Create new namespace
     
 # Fix error when execute .sh file (then run again)
-    `sed -i -e 's/\r$//' scriptname.sh`
+    sed -i -e 's/\r$//' scriptname.sh
     
 # Other links
 1. https://kubernetes.io/blog/2020/05/21/wsl-docker-kubernetes-on-the-windows-desktop/

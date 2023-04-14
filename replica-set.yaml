@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # change version API
+kind: ReplicaSet # change resource name
+metadata:
+  name: replica-set
+spec:
+  replicas: 2
+  selector:
+    matchLabels: # change here
+      app: kube-starter
+  template:
+    metadata:
+      labels:
+        app: kube-starter
+    spec:
+      containers:
+        - image: localhost:5000/kube-image # image used to run container
+          name: kube-container # name of the container
+          imagePullPolicy: IfNotPresent # The image is pulled only if it is not already present locally.
+          ports:
+            - containerPort: 3002 # pod of the container
