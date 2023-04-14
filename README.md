@@ -19,7 +19,12 @@
         - Replica count: Number of pods
         - Pod template: Pod config
     2. ReplicaSets: Similar to replication controller but more flexible in label selector, deploy multiple pods in node, 1 pod can deploy in any nodes
-    3. DaemonSets: Similar to ReplicaSets but can deploy only 1 pod to each node, don't have replica property, usually used to monitoring and logging. We want have only 1 monitoring pod on each node
+    3. DaemonSets: Similar to ReplicaSets but can deploy only 1 pod to each node, don't have replica property, usually used to monitoring and logging. We want have only 1 monitoring pod on each node.
+    4. Services: An resource endpoint between client and pod group, each service have 1 IP address and port, client will connect to service then service connect to pod through label selectors, it have 4 types:
+        - ClusterIP: Create an IP and local DNS that can access to internal cluster, cannot access from external, used to internal pods communication.
+        - NodePort: 
+        - ExternalName: 
+        - LoadBalancer: 
 
 # Basic command
     1. kubectl version: Get the version of k8s
@@ -33,6 +38,7 @@
     9. kubectl get pod --show-labels: Get pod list with label
     10. kubectl get ns: Get namespace list
     11. kubectl create ns <namespace_name>: Create new namespace
+    12. kubectl get svc: Get service list
     
 # Fix error when execute .sh file (then run again)
     sed -i -e 's/\r$//' scriptname.sh

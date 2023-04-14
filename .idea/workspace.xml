@@ -4,7 +4,6 @@
     <list default="true" id="30b9d021-37e9-4d87-8655-70afa5ccfb00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kube-starter.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
       <workItem from="1681181706039" duration="1194000" />
       <workItem from="1681267541221" duration="5403000" />
       <workItem from="1681354006232" duration="12410000" />
-      <workItem from="1681437415740" duration="7495000" />
+      <workItem from="1681437415740" duration="13610000" />
     </task>
     <servers />
   </component>
