@@ -22,9 +22,9 @@
     3. DaemonSets: Similar to ReplicaSets but can deploy only 1 pod to each node, don't have replica property, usually used to monitoring and logging. We want have only 1 monitoring pod on each node.
     4. Services: An resource endpoint between client and pod group, each service have 1 IP address and port, client will connect to service then service connect to pod through label selectors, it have 4 types:
         - ClusterIP: Create an IP and local DNS that can access to internal cluster, cannot access from external, used to internal pods communication.
-        - NodePort: 
-        - ExternalName: 
-        - LoadBalancer: 
+        - NodePort: Expose pod to external client can access, use port of Worker Node to client access (port range from 30000 - 32767).
+        - LoadBalancer: When you run k8s on cloud (Amazon EKS), it will create an public IP used to client access.
+        - Ingress resource: Expose HTTP and HTTPS routes from external cluster to internal cluster service, assign an domain with service in cluster, we can mapping multiple services with one domain.
 
 # Basic command
     1. kubectl version: Get the version of k8s
