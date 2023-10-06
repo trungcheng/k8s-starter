@@ -34,11 +34,14 @@
     5. kubectl proxy: Serve proxy for dashboard
     6. kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}'): Generate token to login
     7. kubectl logs -f <pod_name>: Get logs of pod realtime
-    8. kubectl port-forward pod/<pod_name> 3002:3002: Expose port from local cluster to external
+    8. kubectl port-forward pod/<pod_name> 3002:3002: Expose port of pod from local cluster to external
     9. kubectl get pod --show-labels: Get pod list with label
     10. kubectl get ns: Get namespace list
     11. kubectl create ns <namespace_name>: Create new namespace
-    12. kubectl get svc: Get service list
+    12. kubectl delete ns <namespace_name>: Delete namespace
+    13. kubectl get svc: Get service list
+    14. kubectl get rc: Get replica controller list
+    15. kubectl get rs: Get replica set list
     
 # Fix error when execute .sh file (then run again)
     sed -i -e 's/\r$//' scriptname.sh
