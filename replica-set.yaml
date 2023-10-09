@@ -7,6 +7,11 @@ spec:
   selector:
     matchLabels: # change here
       app: kube-starter
+    matchExpressions: # optional, used to replica pods which match the expression
+      - key: app
+        operator: In
+        values:
+          - kube-starter
   template:
     metadata:
       labels:

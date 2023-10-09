@@ -25,6 +25,19 @@
         - NodePort: Expose pod to external client can access, use port of Worker Node to client access (port range from 30000 - 32767).
         - LoadBalancer: When you run k8s on cloud (Amazon EKS), it will create an public IP used to client access.
         - Ingress resource: Expose HTTP and HTTPS routes from external cluster to internal cluster service, assign an domain with service in cluster, we can mapping multiple services with one domain.
+    5. Deployment: An resource of k8s which help us update new version for application easily, prevent downtime and increase high available ability. It will create replica set, then replica set create pod, then pod run container.
+    6. Volume: Disk storage of container, an mount point from file server system to internal container. It have serveral types such as:
+        - emptyDir: Share data between containers, save data temporary. It usually use for save logs.
+        - gitRepo: deprecated in version 1.25.
+        - hostPath: access filesystem of worker node, create an mount point from pod to out of node filesystem. It used to save persistent data, just exist on one worker node, exists event if the pod is deleted.
+        - cloud storage: gcePersistentDisk, awsElasticBlockStore, azureDisk
+        - PersistentVolume: An storage architecture which split pod to individual, used for cluster administrator.
+        - PersistentVolumeClaim: Used for developer, need to deploy pod and need to use volume to store persistent data.
+    7. StorageClass: auto create persistent volume
+    8. ConfigMap: Pass configuration of application to container. (key/value)
+    9. Secret: Same with config map, used to store sensitive data using cli not config file.
+    10. StatefulSets: An resource which help us run multiple pods with same template, but difference with ReplicaSet that pod of StatefulSet will be identified index (not random like ReplicaSet) and each pod will have a stable network identity and storage. (auto scale new pod with same name and same hostname with old pod).
+    11. Downward API: It is the way to pass Pod metadata information to container.
 
 # Basic command
     1. kubectl version: Get the version of k8s
@@ -42,6 +55,14 @@
     13. kubectl get svc: Get service list
     14. kubectl get rc: Get replica controller list
     15. kubectl get rs: Get replica set list
+    16. kubectl set image deployment <deployment-name> <container-name>=<new-image>: Update lại pod với image mới bằng deployment.
+    17. kubectl rollout status deploy <deployment-name>: Kiểm tra trạng thái update deployment.
+    18. kubectl rollout history deploy <deployment-name>: Kiểm tra lịch sử các lần application được update.
+    19. kubectl rollout undo deployment <deployment-name> --to-revision=2: Undo application to revision number.
+    20. kubectl get pv: Get persistent volume list.
+    21. kubectl get pvc: Get persistent volume claim list.
+    22. kubectl get sc: Get storage class list.
+    23. kubectl create secret generic postgres-config --from-literal=DB=postgres --from-literal=USER=postgres --from-literal=PASSWORD=postgres: Create secret to store sensitive data.
     
 # Fix error when execute .sh file (then run again)
     sed -i -e 's/\r$//' scriptname.sh
