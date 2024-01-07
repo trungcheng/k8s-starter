@@ -64,6 +64,16 @@
     22. kubectl get sc: Get storage class list.
     23. kubectl create secret generic postgres-config --from-literal=DB=postgres --from-literal=USER=postgres --from-literal=PASSWORD=postgres: Create secret to store sensitive data.
     
+# Install kinD with k8s on docker desktop and create cluster: 
+    curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-linux-amd64
+    chmod +x ./kind
+    sudo mv ./kind /usr/local/bin/
+    kind create cluster --name wslkind
+    kubectl cluster-info
+
+# Run k8s with local registry (using docker image from local registry)
+    ./kind-registry.sh
+
 # Fix error when execute .sh file (then run again)
     sed -i -e 's/\r$//' scriptname.sh
     
