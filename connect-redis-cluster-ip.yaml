@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: redis-test-cluster-ip
-spec:
-  containers:
-    - image: 080196/hello-redis # This image connect redis service through DNS 'redis://redis:6379'
-      name: redis-test-cluster-ip
