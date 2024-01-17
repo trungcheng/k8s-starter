@@ -17,6 +17,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="node-k8s-sample" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -35,11 +40,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "//wsl$/Ubuntu-22.04/var/www/node-k8s-microservices",
+    "last_opened_file_path": "//wsl$/Ubuntu-20.04/var/www/k8s-starter",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,7 +71,8 @@
       <workItem from="1681696998500" duration="4272000" />
       <workItem from="1683629006804" duration="625000" />
       <workItem from="1696231714719" duration="33000" />
-      <workItem from="1704471460696" duration="1589000" />
+      <workItem from="1703732872918" duration="1888000" />
+      <workItem from="1705458723709" duration="1905000" />
     </task>
     <servers />
   </component>

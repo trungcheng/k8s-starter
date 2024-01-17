@@ -1,7 +1,7 @@
-# Common flow
+# Flow overview
     Cluster (master node + worker nodes) -> Nodes -> Pods -> Docker containers
     
-# Detail common flow
+# Common components
     1. Cluster: Include 1 master node and multiple worker nodes
     2. Master node:
         - API Server
@@ -59,17 +59,21 @@
     17. kubectl rollout status deploy <deployment-name>: Kiểm tra trạng thái update deployment.
     18. kubectl rollout history deploy <deployment-name>: Kiểm tra lịch sử các lần application được update.
     19. kubectl rollout undo deployment <deployment-name> --to-revision=2: Undo application to revision number.
-    20. kubectl get pv: Get persistent volume list.
-    21. kubectl get pvc: Get persistent volume claim list.
-    22. kubectl get sc: Get storage class list.
-    23. kubectl create secret generic postgres-config --from-literal=DB=postgres --from-literal=USER=postgres --from-literal=PASSWORD=postgres: Create secret to store sensitive data.
+    20. kubectl rollout restart deployment <deployment-name>: Restart deployment resource.
+    21. kubectl get pv: Get persistent volume list.
+    22. kubectl get pvc: Get persistent volume claim list.
+    23. kubectl get sc: Get storage class list.
+    24. kubectl create secret generic postgres-config --from-literal=DB=postgres --from-literal=USER=postgres --from-literal=PASSWORD=postgres: Create secret to store sensitive data.
     
 # Install kinD with k8s on docker desktop and create cluster: 
     curl -Lo ./kind https://github.com/kubernetes-sigs/kind/releases/download/v0.7.0/kind-linux-amd64
     chmod +x ./kind
     sudo mv ./kind /usr/local/bin/
-    kind create cluster --name wslkind
+    kind create cluster --name <cluster-name>
     kubectl cluster-info
+
+# Install nginx ingress controller for k8s on docker desktop: (k8s v1.25.2)
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.49.3/deploy/static/provider/cloud/deploy.yaml
 
 # Run k8s with local registry (using docker image from local registry)
     ./kind-registry.sh
