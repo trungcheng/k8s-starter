@@ -52,7 +52,7 @@ connect()
     });
   })
   .catch(error => {
-    console.error('Unable to connect to the Rabbit MQ:', error);
+    console.error('Unable to connect to the RabbitMQ:', error);
     process.exit(1);
   });
 
@@ -63,7 +63,7 @@ app.use(express.json());
 const port = +process.env.PORT ?? 3003;
 
 app.listen(port, () => {
-  console.log(`Orders Service at ${port}`);
+  console.log(`Orders service is running at ${port}`);
 });
 
 app.get('/orders', async (req, res) => {

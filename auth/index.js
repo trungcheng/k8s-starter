@@ -12,7 +12,7 @@ app.use(express.json());
 const port = +process.env.PORT ?? 3001;
 
 app.listen(port, () => {
-  console.log(`Auth Service at ${port}`);
+  console.log(`Auth service is running at ${port}`);
 });
 
 app.post('/api/register', async (req, res) => {

@@ -16,7 +16,7 @@ async function connect() {
 }
 
 connect().catch(error => {
-  console.error('Unable to connect to the Rabbit MQ:', error);
+  console.error('Unable to connect to the RabbitMQ:', error);
   process.exit(1);
 });
 
@@ -27,7 +27,7 @@ app.use(express.json());
 const port = +process.env.PORT ?? 3002;
 
 app.listen(port, () => {
-  console.log(`Products Service at ${port}`);
+  console.log(`Products service is running at ${port}`);
 });
 
 app.get('/products', async (req, res) => {
