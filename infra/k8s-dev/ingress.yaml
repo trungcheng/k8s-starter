@@ -5,9 +5,10 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/server-name: "node-k8s.dev"
 spec:
   rules:
-    - host: kubernetes.docker.internal
+    - host: node-k8s.dev
       http:
         paths:
           - path: /api/?(.*)

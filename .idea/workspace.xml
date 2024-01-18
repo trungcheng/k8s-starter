@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="30b9d021-37e9-4d87-8655-70afa5ccfb00" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s-dev/auth.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s-dev/auth.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s-dev/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s-dev/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s-dev/orders.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s-dev/orders.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s-dev/postgresql.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s-dev/postgresql.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s-dev/products.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s-dev/products.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infra/k8s-dev/rabbitmq.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/k8s-dev/rabbitmq.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +22,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -30,19 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "//wsl$/Ubuntu-22.04/var/www/node-k8s-microservices",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu-22.04/var/www/node-k8s-microservices&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu-20.04\var\www\k8s-starter" />
