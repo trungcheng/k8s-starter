@@ -4,6 +4,7 @@ const sequelize = require('./database');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('./user.model');
+const isAuthenticated = require('./isAuthenticated');
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.listen(port, () => {
   console.log(`Auth service is running at ${port}`);
 });
 
-app.post('/api/register', async (req, res) => {
+app.post('/api/auth/signup', async (req, res) => {
   let { name, email, password } = req.body;
   password = await bcrypt.hash(password, 12);
 
@@ -30,7 +31,7 @@ app.post('/api/register', async (req, res) => {
   });
 });
 
-app.post('/api/login', async (req, res) => {
+app.post('/api/auth/signin', async (req, res) => {
   let { email, password } = req.body;
 
   const user = await User.findOne({ where: { email } });
@@ -47,8 +48,12 @@ app.post('/api/login', async (req, res) => {
       res.status(200).json({ token, name: user.name, email });
     });
   } else {
-    res.status(401).json({ error: 'Login failed' });
+    res.status(401).json({ error: 'Signin failed' });
   }
+});
+
+app.get('/api/auth/current-user', isAuthenticated, async (req, res) => {
+  res.status(200).json({ currentUser: req.currentUser || null });
 });
 
 sequelize.sync();

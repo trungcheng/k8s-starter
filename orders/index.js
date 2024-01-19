@@ -66,7 +66,7 @@ app.listen(port, () => {
   console.log(`Orders service is running at ${port}`);
 });
 
-app.get('/orders', async (req, res) => {
+app.get('/api/orders', async (req, res) => {
   const results = await Order.findAll();
 
   res.status(200).json(results);

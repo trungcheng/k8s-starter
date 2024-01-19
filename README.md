@@ -14,5 +14,5 @@
         - For window: Add `127.0.0.1 <your-hostname>` (c:\Windows\System32\Drivers\etc\hosts)
         - For linux: Add `127.0.0.1 <your-hostname>` (/etc/hosts)
         - Make sure that <your-hostname> is same with host in /infra/k8s-dev/ingress.yaml
-    7. Run ./deploy.sh to apply k8s resources. (all resources are in default namespace)
-    8. Open browser then access http://<your-hostname>/orders
+    7. Run ./deploy-dev.sh to apply k8s resources. (all resources are in default namespace)
+    8. Open browser then access http://<your-hostname>

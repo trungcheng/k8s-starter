@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE="auth products orders"
+SERVICE="auth products orders client"
 
 for service in $SERVICE
 do
@@ -10,5 +10,8 @@ do
    cd ..
 done
 
+kubectl delete -f infra/k8s
 kubectl delete -f infra/k8s-dev
+
+kubectl apply -f infra/k8s
 kubectl apply -f infra/k8s-dev

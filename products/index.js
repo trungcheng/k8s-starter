@@ -30,13 +30,13 @@ app.listen(port, () => {
   console.log(`Products service is running at ${port}`);
 });
 
-app.get('/products', async (req, res) => {
+app.get('/api/products', async (req, res) => {
   const results = await Product.findAll();
 
   res.status(200).json(results);
 });
 
-app.post('/products', isAuthenticated, async (req, res) => {
+app.post('/api/products', isAuthenticated, async (req, res) => {
   const { name, price, description, imageURL } = req.body;
 
   const product = await Product.create({
@@ -50,7 +50,7 @@ app.post('/products', isAuthenticated, async (req, res) => {
   res.status(200).json(product);
 });
 
-app.post('/products/buy', isAuthenticated, async (req, res) => {
+app.post('/api/products/buy', isAuthenticated, async (req, res) => {
   const { ids } = req.body;
   const products = await Product.findAll({
     where: {

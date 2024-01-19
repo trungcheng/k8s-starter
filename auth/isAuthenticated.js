@@ -7,7 +7,7 @@ module.exports = async function isAuthenticated(req, res, next) {
     if (err) {
       return res.status(401).json({ message: err });
     } else {
-      req.user = user;
+      req.currentUser = user;
       next();
     }
   });
