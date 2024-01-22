@@ -27,7 +27,7 @@ const Header = ({ currentUser }) => {
             <div className="d-flex justify-content-end">
                 {currentUser && (
                     <span className="nav d-flex align-items-center">
-                        Logged in as {currentUser.email}
+                        Logged in as {currentUser.name}
                     </span>
                 )}
                 <ul className="nav d-flex align-items-center">{links}</ul>
