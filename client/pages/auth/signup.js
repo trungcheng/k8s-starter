@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Router from 'next/router';
-import { useRequest } from "../../hooks/use-request";
+import useRequest from "../../hooks/use-request";
 
-const signup = () => {
+const Signup = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,7 +24,7 @@ const signup = () => {
         <form onSubmit={onSubmit}>
             <h1>Sign Up</h1>
 
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label>Name</label>
                 <input
                     value={name}
@@ -33,7 +33,7 @@ const signup = () => {
                 />
             </div>
 
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label>Email Address</label>
                 <input
                     value={email}
@@ -42,7 +42,7 @@ const signup = () => {
                 />
             </div>
 
-            <div className="form-group">
+            <div className="form-group mb-3">
                 <label>Password</label>
                 <input
                     value={password}
@@ -59,4 +59,4 @@ const signup = () => {
     );
 };
 
-export default signup;
+export default Signup;

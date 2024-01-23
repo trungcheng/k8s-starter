@@ -1,12 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import { buildClient } from '../api/build-client';
-import { Header } from '../components/header';
+import buildClient from '../api/build-client';
+import Header from '../components/header';
 
 const AppComponent = ({ currentUser, Component, pageProps }) => {
     return (
         <div>
             <Header currentUser={currentUser} />
-            <Component {...pageProps} />
+
+            <div className="container mt-4">
+                <Component {...pageProps} />
+            </div>
         </div>
     )
 };

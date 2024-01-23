@@ -34,19 +34,21 @@ const Header = ({ currentUser }) => {
 
     return (
         <nav className="navbar navbar-light bg-light">
-            <Link href="/" className="navbar-brand">
-                Node K8s Client
-            </Link>
-            <div className="d-flex justify-content-end">
-                {authName && (
-                    <span className="nav d-flex align-items-center">
-                        Logged in as {authName}
-                    </span>
-                )}
-                <ul className="nav d-flex align-items-center">{links}</ul>
+            <div className="container-fluid">
+                <Link href="/" className="navbar-brand">
+                    Node K8s Client
+                </Link>
+                <div className="d-flex justify-content-end">
+                    {authName && (
+                        <span className="nav d-flex align-items-center">
+                            Logged in as {authName}
+                        </span>
+                    )}
+                    <ul className="nav d-flex align-items-center">{links}</ul>
+                </div>
             </div>
         </nav>
     );
 };
 
-export { Header };
+export default Header;

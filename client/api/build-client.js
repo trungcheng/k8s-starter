@@ -29,4 +29,4 @@ const buildClient = ({ req }) => {
     return axiosInstance;
 };
 
-export { buildClient };
+export default buildClient;

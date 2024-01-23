@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { buildClient } from '../api/build-client';
+import buildClient from '../api/build-client';
 import { useState } from 'react';
 
 const useRequest = ({ url, method, body, onSuccess }) => {
@@ -8,8 +8,8 @@ const useRequest = ({ url, method, body, onSuccess }) => {
     const doRequest = async () => {
         try {
             setErrors(null);
+
             const client = buildClient();
-            //const response = await axios[method](url, body);
             const response = await client[method](url, body);
 
             if (onSuccess != null) {
@@ -18,6 +18,8 @@ const useRequest = ({ url, method, body, onSuccess }) => {
 
             return response.data;
         } catch (error) {
+            console.log(error);
+
             setErrors(
                 <div className="alert alert-danger">
                     <h4>Oops...</h4>
@@ -34,4 +36,4 @@ const useRequest = ({ url, method, body, onSuccess }) => {
     return { doRequest, errors };
 };
 
-export { useRequest };
+export default useRequest;

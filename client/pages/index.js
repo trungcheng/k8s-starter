@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import { buildClient } from '../api/build-client';
+import buildClient from '../api/build-client';
 import { getTokenCookie } from '../lib/utils';
 
 const LandingPage = ({ currentUser }) => {

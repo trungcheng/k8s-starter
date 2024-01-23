@@ -1,3 +1,5 @@
+import buildClient from '../../api/build-client';
+
 const ProductIndex = ({ products }) => {
     const productList = products.map(({ id, name, price }) => (
         <li key={id}>
@@ -13,7 +15,8 @@ const ProductIndex = ({ products }) => {
     );
 };
 
-ProductIndex.getInitialProps = async (context, client) => {
+ProductIndex.getInitialProps = async (context) => {
+    const client = buildClient();
     const { data: products } = await client.get('/api/products');
 
     return { products };
