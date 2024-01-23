@@ -14,8 +14,11 @@ const AppComponent = ({ currentUser, Component, pageProps }) => {
 // The object passed into custom components is different from the object passed
 // into page components.
 AppComponent.getInitialProps = async ({ Component, ctx }) => {
-    const client = buildClient(ctx);
-    const { data } = await client.get('/api/auth/current-user');
+    // const client = buildClient(ctx);
+    // const { data } = await client.get('/api/auth/current-user');
+    let data = {
+        currentUser: {}
+    }
 
     // getInitialProps for pages isn't automatically called if we define the method in _app.
     // So here we manually call their functions. And below pass them the results as pageProps.

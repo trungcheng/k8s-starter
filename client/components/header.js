@@ -1,12 +1,25 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { getTokenCookie, getNameCookie } from '../lib/utils';
 
 const Header = ({ currentUser }) => {
+    const [token, setToken] = useState(null);
+    const [authName, setAuthName] = useState(null);
+    
+    useEffect(() => {
+        let tokenCookie = getTokenCookie();
+        let authNameCookie = getNameCookie();
+
+        setToken(tokenCookie);
+        setAuthName(authNameCookie);
+    }, []);
+
     const links = [
-        !currentUser && { label: 'Sign Up', href: '/auth/signup' },
-        !currentUser && { label: 'Sign In', href: '/auth/signin' },
-        currentUser && { label: 'Sign Out', href: '/auth/signout' },
-        currentUser && { label: 'My Products', href: '/products' },
-        currentUser && { label: 'My Orders', href: '/orders' }
+        !token && { label: 'Sign Up', href: '/auth/signup' },
+        !token && { label: 'Sign In', href: '/auth/signin' },
+        token && { label: 'Sign Out', href: '/auth/signout' },
+        token && { label: 'My Products', href: '/products' },
+        token && { label: 'My Orders', href: '/orders' }
     ]
         .filter(linkConfig => linkConfig)
         .map(({ label, href }) => {
@@ -25,9 +38,9 @@ const Header = ({ currentUser }) => {
                 Node K8s Client
             </Link>
             <div className="d-flex justify-content-end">
-                {currentUser && (
+                {authName && (
                     <span className="nav d-flex align-items-center">
-                        Logged in as {currentUser.name}
+                        Logged in as {authName}
                     </span>
                 )}
                 <ul className="nav d-flex align-items-center">{links}</ul>

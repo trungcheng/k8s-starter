@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Router from 'next/router';
 import { useRequest } from "../../hooks/use-request";
+import { setCookieData } from '../../lib/utils';
 
 const signin = () => {
     const [email, setEmail] = useState('');
@@ -12,7 +13,7 @@ const signin = () => {
             email, password
         },
         onSuccess: (data) => {
-            document.cookie = `node_k8s_token=${data.token}; path=/; max-age=31536000`;
+            setCookieData(data.token, data.name);
             Router.push('/');
         }
     });

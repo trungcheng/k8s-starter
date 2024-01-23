@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import Router from 'next/router';
+import { removeCookieData } from '../../lib/utils';
 
 const Signout = () => {
     const signoutAction = () => {
-        document.cookie = `node_k8s_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT`;
+        removeCookieData();
         Router.push('/auth/signin');
     }
 
